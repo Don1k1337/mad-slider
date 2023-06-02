@@ -6,7 +6,7 @@ export interface Slide {
 export interface SliderOptions {
     delay: number;
     root: string;
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
     slides: Slide[];
 }
