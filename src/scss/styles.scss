@@ -1,3 +1,8 @@
+// common styles
+
+@import 'mixins';
+@import '_variables';
+
 body, h1, h2, h3 {
   margin: 0;
   padding: 0;
@@ -14,39 +19,57 @@ body, h1, h2, h3 {
 
 .slider {
   position: relative;
-  width: 300px;
-  height: 300px;
   perspective: 1000px;
   margin: 0 auto;
   overflow: hidden;
 
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    transition: transform 0.5s ease;
+  // Media queries for slider dimensions (if not specified manually)
 
-    .slide.active {
-      transform: translateX(0);
-      z-index: 1;
-    }
-
-    .slide.next {
-      transform: translateX(100%);
-      z-index: 0;
-    }
-
-    .slide.previous {
-      transform: translateX(-100%);
-      z-index: 0;
-    }
+  @media #{$breakpoint-large} {
+    /* Width and height applied if not provided manually */
+    width: 750px;
+    height: 400px;
   }
+
+  @media #{$breakpoint-medium} {
+    /* Width and height applied if not provided manually */
+    width: 650px;
+    height: 300px;
+  }
+
+  @media #{$breakpoint-small} {
+    /* Width and height applied if not provided manually */
+    width: 400px;
+    height: 300px;
+  }
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.slide.active {
+  @include translateX(0);
+  @include zIndex(1)
+}
+
+.slide.next {
+  @include translateX(100%);
+  @include zIndex(0)
+}
+
+.slide.previous {
+  @include translateX(-100%);
+  @include zIndex(0)
 }
