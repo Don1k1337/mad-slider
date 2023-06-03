@@ -14,17 +14,21 @@ body, h1, h2, h3 {
   position: relative;
   perspective: 1000px;
   margin: 0 auto;
-  overflow: hidden; }
+  overflow: hidden;
+  color: #dfe4ec; }
   @media (min-width: 1024px) {
     .slider {
+      /* Width and height applied if not provided manually */
       width: 750px;
       height: 400px; } }
   @media (min-width: 768px) and (max-width: 1023px) {
     .slider {
+      /* Width and height applied if not provided manually */
       width: 650px;
       height: 300px; } }
   @media (max-width: 767px) {
     .slider {
+      /* Width and height applied if not provided manually */
       width: 400px;
       height: 300px; } }
 

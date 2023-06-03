@@ -8,14 +8,14 @@ export class Slider {
     slideWidth: number;
 
     constructor(options: SliderOptions) {
-        // Additional check in case there is no type checking
+        // Additional check in case there is no provided options
         if (typeof options === 'undefined') {
             throw new Error('An argument for options was not provided.');
         }
 
-        const appElement = document.getElementById("app");
+        const appElement = document.getElementById('app');
         if (!appElement) {
-            throw new Error('Element with ID "app" not found.');
+            throw new Error(`Element with ID '${appElement}' not found.`);
         }
 
         this.intervalId = setTimeout(() => {
