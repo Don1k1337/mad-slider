@@ -55,8 +55,13 @@ mad-slider/
 │   │   └── ...  (unit tests for the slider)
 │   ├── Slider/
 │   │   └── ...  (implementation files for the slider logic)
-│   └── types/
-│       └── ...  (TypeScript type definitions)
+│   ├── use/
+│   │   └── ...  (custom hooks)
+│   ├── scss/
+│   │   └── ...  (SCSS stylesheets)
+│   ├── types/
+│   │   └── ...  (TypeScript type definitions)
+│   └── index.ts  (main entry point)
 ├── .gitignore
 ├── README.md
 ├── package.json
