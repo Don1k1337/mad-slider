@@ -20,12 +20,17 @@ A simple slider built with TypeScript, HTML, SCSS, and Jest unittest coverage.
     yarn install
     ```
     
-3. To run the tests using Jest, execute the following command:
+3. Compile the .ts files:
+   ```bash
+   yarn tsc
+   ```
+      
+4. To run the tests using Jest, execute the following command:
    ```bash
    yarn test
    ```   
    
-4. Build the project:
+5. Build the project:
     ```bash
     yarn build
     ```
@@ -37,5 +42,3 @@ A simple slider built with TypeScript, HTML, SCSS, and Jest unittest coverage.
    The project will start on http://localhost:3000 by default (specified in package.json).
    
    **Note:** _If you make any changes to the TypeScript code (src directory), you need to run ```yarn tsc``` before rebuilding and running the project to compile the updated TypeScript files._
-
-
