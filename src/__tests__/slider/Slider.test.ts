@@ -1,5 +1,5 @@
 import {Slider} from '../../slider/Slider';
-import {rgbToHex} from '../../use/rgbToHex';
+import {useRgbToHex} from '../../use/useRgbToHex';
 import {SliderOptions} from '../../types/interfaces';
 
 describe('Slider logic', () => {
@@ -92,7 +92,7 @@ describe('Slider logic', () => {
         for (let i = 0; i < slider.slideElements.length; i++) {
             const slideElement = slider.slideElements[i];
             const expectedColor = options.slides[i].color;
-            const slideElementColor = rgbToHex(slideElement.style.backgroundColor || '');
+            const slideElementColor = useRgbToHex(slideElement.style.backgroundColor || '');
 
             expect(slideElementColor).toEqual(expectedColor);
             expect(slideElement.textContent).toEqual(options.slides[i].text);

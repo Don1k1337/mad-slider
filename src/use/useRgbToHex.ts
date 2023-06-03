@@ -1,4 +1,4 @@
-export function rgbToHex(rgb: string): string {
+export function useRgbToHex(rgb: string): string {
     // Get each RGB component
     const rgbComponents = rgb.match(/\d+/g);
 
