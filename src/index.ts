@@ -1,5 +1,5 @@
-import {SliderOptions} from "./types/interfaces";
-import {Slider} from './slider/Slider'
+import {SliderOptions} from './types/interfaces';
+import {Slider} from './slider/Slider';
 
 const options: SliderOptions = {
     delay: 2500,

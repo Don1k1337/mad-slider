@@ -1,17 +1,23 @@
-import {SliderOptions} from "../types/interfaces";
+import {SliderOptions} from '../types/interfaces';
 
 export class Slider {
-    private readonly sliderElement: HTMLElement;
-    private readonly slideElements: HTMLElement[];
-    private intervalId: NodeJS.Timeout;
-    private currentIndex: number;
-    private slideWidth: number;
+    readonly sliderElement: HTMLElement;
+    readonly slideElements: HTMLElement[];
+    intervalId: NodeJS.Timeout;
+    currentIndex: number;
+    slideWidth: number;
 
     constructor(options: SliderOptions) {
         // Additional check in case there is no type checking
         if (typeof options === 'undefined') {
             throw new Error('An argument for options was not provided.');
         }
+
+        const appElement = document.getElementById("app");
+        if (!appElement) {
+            throw new Error('Element with ID "app" not found.');
+        }
+
         this.intervalId = setTimeout(() => {
         }, 0);
         this.sliderElement = document.createElement('div');
@@ -20,7 +26,7 @@ export class Slider {
         const slidesArray = Object.entries(options.slides).map(([key, value]) => ({
             key,
             ...value,
-        }));
+        })).reverse();
 
         this.slideElements = slidesArray.map((slide) => {
             const slideElement = document.createElement('div');
@@ -29,9 +35,9 @@ export class Slider {
             slideElement.style.backgroundColor = slide.color;
             this.sliderElement.appendChild(slideElement);
             return slideElement;
-        })
+        }).reverse();
 
-        document.getElementById("app")!.appendChild(this.sliderElement);
+        appElement.appendChild(this.sliderElement);
 
         // Setting width if provided
         options.width && (this.sliderElement.style.width = `${options.width}px`);
@@ -50,6 +56,7 @@ export class Slider {
 
     public stop = () => {
         clearInterval(this.intervalId);
+        this.intervalId = null
     };
 
     private slide(): void {
@@ -65,7 +72,7 @@ export class Slider {
         });
 
         // Checking to reach the end of slides
-        if (this.currentIndex === this.slideElements.length - 1) {
+        if (nextIndex === this.slideElements.length - 1) {
             this.stop();
         }
 
