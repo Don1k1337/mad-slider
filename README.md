@@ -48,6 +48,7 @@ A simple slider built with TypeScript, HTML, SCSS, and Jest unittest coverage.
 
 The project follows a specific structure to organize the source code and related files. Here is an overview of the project structure:
 
+```
 mad-slider/
 ├── src/
 │   ├── __tests__/
@@ -60,3 +61,4 @@ mad-slider/
 ├── README.md
 ├── package.json
 └── ...  (other project configuration files)
+```
