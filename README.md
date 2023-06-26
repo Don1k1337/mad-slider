@@ -2,6 +2,30 @@
 
 A simple slider built with TypeScript, HTML, SCSS, and Jest unittest coverage.
 
+## Project Structure
+
+The project follows a specific structure to organize the source code and related files. Here is an overview of the project structure:
+
+```
+mad-slider/
+├── src/
+│   ├── __tests__/
+│   │   └── ...  (unit tests for the slider)
+│   ├── Slider/
+│   │   └── ...  (implementation files for the slider logic)
+│   ├── use/
+│   │   └── ...  (custom hooks)
+│   ├── scss/
+│   │   └── ...  (SCSS stylesheets)
+│   ├── types/
+│   │   └── ...  (TypeScript type definitions)
+│   └── index.ts  (main entry point)
+├── .gitignore
+├── README.md
+├── package.json
+└── ...  (other project configuration files)
+```
+
 ## Prerequisites
 
 - Node.js (version 1.22.19)
@@ -42,28 +66,3 @@ A simple slider built with TypeScript, HTML, SCSS, and Jest unittest coverage.
    The project will start on http://localhost:3000 by default (specified in package.json).
    
    **Note:** _If you make any changes to the TypeScript code (src directory), you need to run ```yarn tsc``` before rebuilding and running the project to compile the updated TypeScript files._
-
-
-## Project Structure
-
-The project follows a specific structure to organize the source code and related files. Here is an overview of the project structure:
-
-```
-mad-slider/
-├── src/
-│   ├── __tests__/
-│   │   └── ...  (unit tests for the slider)
-│   ├── Slider/
-│   │   └── ...  (implementation files for the slider logic)
-│   ├── use/
-│   │   └── ...  (custom hooks)
-│   ├── scss/
-│   │   └── ...  (SCSS stylesheets)
-│   ├── types/
-│   │   └── ...  (TypeScript type definitions)
-│   └── index.ts  (main entry point)
-├── .gitignore
-├── README.md
-├── package.json
-└── ...  (other project configuration files)
-```
